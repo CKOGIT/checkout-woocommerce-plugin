@@ -235,6 +235,7 @@ class WC_Checkoutcom_Api_Request {
 			$payment_option = 'PayPal';
 
 			$method = new RequestPayPalSource();
+			$method->invoice_number = $order->get_id();
 
 		} elseif ( in_array( $arg, $apms_selected, true ) ) {
 			// Alternative payment method selected.
